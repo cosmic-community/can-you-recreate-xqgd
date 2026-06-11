@@ -14,11 +14,11 @@ export default function HowItWorksSection({
   if (steps.length === 0) return null
 
   return (
-    // Changed: Updated section bg to match production - clean white
+    // Changed: How it works on clean white bg matching production
     <section className="py-24 bg-white" id="how-it-works">
       <div className="container-padded">
         <SectionHeading heading={heading} intro={intro} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12">
           {steps.map((step) => {
             const num = getMetafieldValue(step.metadata?.step_number)
             const title = getMetafieldValue(step.metadata?.title) || step.title
@@ -26,15 +26,16 @@ export default function HowItWorksSection({
             return (
               <div
                 key={step.id}
-                // Changed: Step cards use subtle brand-50 background with stronger border
+                // Changed: Step cards — teal-tinted light bg with teal border matching production
                 className="flex gap-5 bg-brand-50 rounded-2xl p-7 border border-brand-100 hover:border-brand-200 transition-colors"
               >
-                {/* Changed: Step number circle uses deep navy matching production */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-800 text-white flex items-center justify-center font-bold text-lg shadow-md">
+                {/* Changed: Step number badge uses teal-green accent matching production */}
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-500 text-white flex items-center justify-center font-bold text-base shadow-sm">
                   {num || getMetafieldValue(step.metadata?.icon_emoji)}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-ink mb-2">{title}</h3>
+                  {/* Changed: Step title uses deep teal-dark ink */}
+                  <h3 className="text-base font-semibold text-hero-mid mb-2">{title}</h3>
                   {description && (
                     <p className="text-ink-light text-sm leading-relaxed">
                       {description}

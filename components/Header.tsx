@@ -7,32 +7,31 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   const navLinks = [
-    { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Privacy', href: '/privacy-features' },
-    { label: 'Clinical Tools', href: '/clinical-features' },
-    { label: 'Client Experience', href: '/client-experience' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Privacy', href: '#privacy' },
+    { label: 'Clinical Tools', href: '#clinical' },
   ]
 
   return (
-    // Changed: Updated header to match production site - clean white with subtle border
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    // Changed: White header with very subtle bottom border — matches production exactly
+    <header className="sticky top-0 z-40 bg-white border-b border-gray-100">
       <div className="container-padded flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2.5">
           <span className="text-xl">🧠</span>
-          {/* Changed: Brand name uses deep navy matching production */}
-          <span className="font-bold text-base text-brand-900 tracking-tight">Therapy Ally</span>
+          {/* Changed: Brand name in deep teal-dark matching production */}
+          <span className="font-bold text-base text-hero-mid tracking-tight">Therapy Ally</span>
         </Link>
 
-        {/* Changed: Nav links use darker text matching production */}
+        {/* Changed: Nav links use medium gray matching production nav style */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-light hover:text-brand-700 transition-colors"
+              className="text-sm font-medium text-ink-light hover:text-brand-600 transition-colors"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -41,17 +40,17 @@ export default function Header() {
             href="https://clinician.therapyally.ai/login"
             target="_blank"
             rel="noopener noreferrer"
-            // Changed: Sign in link with cleaner text style
-            className="text-sm font-medium text-ink-light hover:text-brand-700 transition-colors"
+            // Changed: Sign in uses muted text matching production
+            className="text-sm font-medium text-ink-light hover:text-brand-600 transition-colors"
           >
             Sign In
           </a>
-          {/* Changed: CTA button uses orange accent matching production Get Started button */}
+          {/* Changed: CTA button corrected to teal-green matching production Get Started */}
           <a
             href="https://clinician.therapyally.ai/clinician-signup"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold bg-accent-500 hover:bg-accent-400 text-white px-5 py-2 rounded-lg transition-all duration-200 shadow-sm hover:shadow-accent-400/25"
+            className="text-sm font-semibold bg-accent-500 hover:bg-accent-600 text-white px-5 py-2 rounded-lg transition-all duration-200 shadow-sm"
           >
             Get Started
           </a>
@@ -76,16 +75,16 @@ export default function Header() {
         <div className="md:hidden border-t border-gray-100 bg-white">
           <div className="container-padded py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-ink-light hover:text-brand-700 py-1.5"
+                className="text-sm font-medium text-ink-light hover:text-brand-600 py-1.5"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            {/* Changed: Mobile CTA uses accent orange */}
+            {/* Changed: Mobile CTA uses teal-green accent */}
             <a
               href="https://clinician.therapyally.ai/clinician-signup"
               target="_blank"

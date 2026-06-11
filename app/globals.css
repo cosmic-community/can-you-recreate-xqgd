@@ -4,12 +4,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #111827;
-  /* Changed: Updated CSS variables to match production site colors */
-  --brand-primary: #1e4e70;
-  --brand-dark: #0e2538;
-  --brand-hero: #0f1e2e;
-  --accent: #f97316;
+  --foreground: #0f2027;
+  /* Changed: Corrected CSS variables to accurately match production teal-dark palette */
+  --brand-primary: #125656;
+  --brand-dark: #0a3232;
+  --hero-darkest: #0b1d24;
+  --hero-dark: #0f2631;
+  --hero-mid: #1b3a4b;
+  --accent: #0d9488;
 }
 
 html {
@@ -28,7 +30,6 @@ body {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Changed: Added prose styling for rich text content */
   .prose-brand h2 {
     @apply text-xl font-semibold text-ink mb-2;
   }
@@ -37,12 +38,16 @@ body {
     @apply text-ink-light leading-relaxed;
   }
 
-  /* Changed: Added hero gradient utility matching production site */
+  /* Changed: Hero gradient corrected to match production deep teal-dark */
   .hero-gradient {
-    background: linear-gradient(135deg, #0f1e2e 0%, #1a3347 60%, #1e4e70 100%);
+    background: linear-gradient(160deg, #0b1d24 0%, #0f2631 55%, #1b3a4b 100%);
   }
 
-  /* Changed: Section divider style */
+  /* Changed: Section tint for alternating light sections — subtle teal tint like production */
+  .section-teal-tint {
+    background-color: #f0f5f5;
+  }
+
   .section-divider {
     @apply border-t border-gray-100;
   }

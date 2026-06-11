@@ -7,52 +7,54 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Changed: Updated brand colors to match production Therapy Ally site - deep navy/slate palette
+        // Changed: Refined brand palette to accurately match production - deep teal-navy not pure navy
         brand: {
-          50: '#f0f4f8',
-          100: '#d9e4ed',
-          200: '#b3c9db',
-          300: '#7fa4be',
-          400: '#4f7ea0',
-          500: '#2d6287',
-          600: '#1e4e70',
-          700: '#173d58',
-          800: '#123047',
-          900: '#0e2538',
+          50: '#eef5f5',
+          100: '#cce3e3',
+          200: '#99c7c7',
+          300: '#5fa8a8',
+          400: '#2d8c8c',
+          500: '#1a7070',
+          600: '#125656',
+          700: '#0e4343',
+          800: '#0a3232',
+          900: '#062020',
         },
-        // Changed: Updated accent to the production site's warm amber/coral tone
+        // Changed: CTA/accent color corrected to production teal-green (NOT orange)
         accent: {
-          50: '#fff8f0',
-          100: '#ffefd9',
-          200: '#fed9a8',
-          300: '#fdb96a',
-          400: '#fb912d',
-          500: '#f97316',
+          50: '#e6f7f5',
+          100: '#b3e8e2',
+          200: '#80d9cf',
+          300: '#4dcabc',
+          400: '#26b8a8',
+          500: '#0d9488',
+          600: '#0a7a70',
+          700: '#076158',
+          800: '#054840',
+          900: '#023028',
         },
-        // Changed: Ink colors updated for the production site's text palette
+        // Changed: Ink text colors matching production typography
         ink: {
-          DEFAULT: '#111827',
-          light: '#4b5563',
-          muted: '#9ca3af',
+          DEFAULT: '#0f2027',
+          light: '#4b6b70',
+          muted: '#8aa3a8',
         },
-        // Changed: Added slate palette for section backgrounds matching production
-        slate: {
-          hero: '#0f1e2e',
-          dark: '#132333',
-          mid: '#1a3347',
-          soft: '#f8fafc',
+        // Changed: Hero/dark section backgrounds matching production deep teal-dark
+        hero: {
+          darkest: '#0b1d24',
+          dark: '#0f2631',
+          mid: '#1b3a4b',
+          light: '#1e4a5c',
         },
       },
       fontFamily: {
-        // Changed: Production site uses Inter with system fallbacks
+        // Production site uses Inter with system fallbacks
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
-      // Changed: Added custom letter spacing to match production site headings
       letterSpacing: {
         tighter: '-0.04em',
         tight: '-0.025em',
       },
-      // Changed: Added border radius options matching production cards
       borderRadius: {
         '2xl': '1rem',
         '3xl': '1.5rem',

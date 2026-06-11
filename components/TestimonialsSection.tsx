@@ -9,14 +9,14 @@ export default function TestimonialsSection({
   if (testimonials.length === 0) return null
 
   return (
-    // Changed: Updated testimonials section to use deep navy matching production site
-    <section className="py-24 bg-brand-900 text-white">
+    // Changed: Testimonials section uses deep teal-dark hero gradient matching production
+    <section className="py-24 hero-gradient">
       <div className="container-padded">
-        {/* Changed: Added section header for testimonials area */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">What clinicians are saying</h2>
+          {/* Changed: Section heading in white on dark bg */}
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">What clinicians are saying</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((t) => {
             const quote = getMetafieldValue(t.metadata?.quote)
             const name = getMetafieldValue(t.metadata?.author_name)
@@ -26,24 +26,22 @@ export default function TestimonialsSection({
             return (
               <figure
                 key={t.id}
-                // Changed: Testimonial cards with subtle border and slightly lighter bg matching production
-                className="bg-brand-800/60 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors"
+                // Changed: Testimonial cards — dark teal card with teal left accent border matching production
+                className="bg-white/5 rounded-2xl p-8 border border-white/10 border-l-4 border-l-accent-500"
               >
-                {/* Changed: Added large quote mark styling like production */}
-                <div className="text-4xl text-brand-500 font-serif mb-4 leading-none">&ldquo;</div>
-                <blockquote className="text-base leading-relaxed text-blue-50">
-                  {quote}
+                <blockquote className="text-base leading-relaxed text-white/80 mb-6">
+                  &ldquo;{quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-6 flex items-center gap-4">
-                  {/* Changed: Avatar circle with accent color matching production */}
-                  <div className="w-11 h-11 rounded-full bg-accent-500/20 border border-accent-500/40 flex items-center justify-center font-bold text-sm text-accent-300">
+                <figcaption className="flex items-center gap-4">
+                  {/* Changed: Avatar with teal-green accent matching production */}
+                  <div className="w-10 h-10 rounded-full bg-accent-500/25 border border-accent-500/50 flex items-center justify-center font-bold text-sm text-accent-300 flex-shrink-0">
                     {initials}
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm">{name}</p>
-                    <p className="text-xs text-blue-200/60 mt-0.5">
+                    <p className="text-xs text-white/40 mt-0.5">
                       {titleText}
-                      {org ? `, ${org}` : ''}
+                      {org ? ` · ${org}` : ''}
                     </p>
                   </div>
                 </figcaption>

@@ -2,14 +2,15 @@ export default function QuoteCallout({ quote }: { quote: string }) {
   if (!quote) return null
 
   return (
-    // Changed: Updated quote section to match production - subtle off-white bg with border accent
-    <section className="py-16 bg-brand-50">
+    // Changed: Production-accurate quote style — light teal-tinted bg with left accent border
+    <section className="py-16 bg-[#f0f5f5]">
       <div className="container-padded">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Changed: Large open-quote mark matching production style */}
-          <div className="text-6xl text-brand-200 font-serif leading-none mb-4">&ldquo;</div>
-          <blockquote className="text-xl md:text-2xl font-medium text-brand-800 leading-relaxed">
-            {quote}
+        <div className="max-w-3xl mx-auto">
+          {/* Changed: Left border accent quote style matching production */}
+          <blockquote className="border-l-4 border-accent-500 pl-8 py-2">
+            <p className="text-xl md:text-2xl font-medium text-hero-mid leading-relaxed">
+              &ldquo;{quote}&rdquo;
+            </p>
           </blockquote>
         </div>
       </div>

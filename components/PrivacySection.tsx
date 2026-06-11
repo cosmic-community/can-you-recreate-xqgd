@@ -14,11 +14,11 @@ export default function PrivacySection({
   if (features.length === 0) return null
 
   return (
-    // Changed: Updated to very light slate/gray bg matching production privacy section
-    <section className="py-24 bg-slate-50" id="privacy">
+    // Changed: Privacy section uses teal-tinted light bg alternating with white
+    <section className="py-24 bg-[#f0f5f5]" id="privacy">
       <div className="container-padded">
         <SectionHeading heading={heading} intro={intro} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
           {features.map((feature) => (
             <FeatureCard key={feature.id} item={feature} />
           ))}
