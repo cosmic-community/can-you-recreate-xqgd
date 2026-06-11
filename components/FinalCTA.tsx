@@ -9,24 +9,32 @@ export default function FinalCTA({ page }: { page: LandingPage }) {
   if (!heading) return null
 
   return (
-    <section className="py-20 bg-gradient-to-b from-brand-50 to-white">
+    // Changed: Final CTA uses dark navy gradient matching production bottom section
+    <section className="py-24 hero-gradient">
       <div className="container-padded text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-ink">{heading}</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight">
+          {heading}
+        </h2>
         {subtext && (
-          <p className="mt-4 text-lg text-ink-light">{subtext}</p>
+          <p className="mt-5 text-lg text-blue-100/70 leading-relaxed">{subtext}</p>
         )}
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           {getMetafieldValue(m.primary_cta_label) && (
+            // Changed: Final CTA button uses accent orange matching production
             <a
               href={getMetafieldValue(m.primary_cta_url) || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3 rounded-lg transition-colors"
+              className="inline-flex items-center bg-accent-500 hover:bg-accent-400 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-accent-500/30 hover:shadow-accent-400/40 hover:-translate-y-0.5 text-base"
             >
               {getMetafieldValue(m.primary_cta_label)}
             </a>
           )}
         </div>
+        {/* Changed: Added trust signal below CTA matching production */}
+        <p className="mt-6 text-sm text-blue-100/40">
+          🔒 Privacy-first architecture. HIPAA-compliant. No credit card required.
+        </p>
       </div>
     </section>
   )

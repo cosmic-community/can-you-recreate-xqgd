@@ -14,39 +14,44 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
+    // Changed: Updated header to match production site - clean white with subtle border
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="container-padded flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl">🧠</span>
-          <span className="font-bold text-lg text-brand-700">Therapy Ally</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="text-xl">🧠</span>
+          {/* Changed: Brand name uses deep navy matching production */}
+          <span className="font-bold text-base text-brand-900 tracking-tight">Therapy Ally</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7">
+        {/* Changed: Nav links use darker text matching production */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-light hover:text-brand-600 transition-colors"
+              className="text-sm font-medium text-ink-light hover:text-brand-700 transition-colors"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-4">
           <a
             href="https://clinician.therapyally.ai/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-ink-light hover:text-brand-600"
+            // Changed: Sign in link with cleaner text style
+            className="text-sm font-medium text-ink-light hover:text-brand-700 transition-colors"
           >
             Sign In
           </a>
+          {/* Changed: CTA button uses orange accent matching production Get Started button */}
           <a
             href="https://clinician.therapyally.ai/clinician-signup"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg transition-colors"
+            className="text-sm font-semibold bg-accent-500 hover:bg-accent-400 text-white px-5 py-2 rounded-lg transition-all duration-200 shadow-sm hover:shadow-accent-400/25"
           >
             Get Started
           </a>
@@ -75,16 +80,17 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-ink-light hover:text-brand-600 py-1"
+                className="text-sm font-medium text-ink-light hover:text-brand-700 py-1.5"
               >
                 {link.label}
               </Link>
             ))}
+            {/* Changed: Mobile CTA uses accent orange */}
             <a
               href="https://clinician.therapyally.ai/clinician-signup"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold bg-brand-600 text-white px-4 py-2 rounded-lg text-center"
+              className="text-sm font-semibold bg-accent-500 text-white px-4 py-2.5 rounded-lg text-center mt-1"
             >
               Get Started
             </a>

@@ -22,8 +22,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Changed: Updated font weights to include 300, 400, 500, 600, 700, 800 matching production */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
         <link
@@ -34,6 +35,7 @@ export default function RootLayout({
         <script src="/dashboard-console-capture.js" />
               <script defer src="https://insights.cosmicinsights.dev/script.js" data-project="6a2af644c3293c121782aeaf"></script>
       </head>
+      {/* Changed: Updated body background to match production site clean white */}
       <body className="font-sans antialiased text-ink bg-white">
         <Header />
         <main>{children}</main>

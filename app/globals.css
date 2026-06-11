@@ -4,7 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1a2b33;
+  --foreground: #111827;
+  /* Changed: Updated CSS variables to match production site colors */
+  --brand-primary: #1e4e70;
+  --brand-dark: #0e2538;
+  --brand-hero: #0f1e2e;
+  --accent: #f97316;
 }
 
 html {
@@ -15,10 +20,30 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer components {
   .container-padded {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Changed: Added prose styling for rich text content */
+  .prose-brand h2 {
+    @apply text-xl font-semibold text-ink mb-2;
+  }
+
+  .prose-brand p {
+    @apply text-ink-light leading-relaxed;
+  }
+
+  /* Changed: Added hero gradient utility matching production site */
+  .hero-gradient {
+    background: linear-gradient(135deg, #0f1e2e 0%, #1a3347 60%, #1e4e70 100%);
+  }
+
+  /* Changed: Section divider style */
+  .section-divider {
+    @apply border-t border-gray-100;
   }
 }
