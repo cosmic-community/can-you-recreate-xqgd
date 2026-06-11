@@ -22,8 +22,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Changed: Added Inter weights matching the site — 300, 400, 500, 600, 700, 800 */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&display=swap"
           rel="stylesheet"
         />
         <link
@@ -34,7 +35,8 @@ export default function RootLayout({
         <script src="/dashboard-console-capture.js" />
               <script defer src="https://insights.cosmicinsights.dev/script.js" data-project="6a2af644c3293c121782aeaf"></script>
       </head>
-      <body className="font-sans antialiased text-ink bg-white">
+      {/* Changed: body bg matches cream background from site */}
+      <body className="font-sans antialiased text-ink" style={{ backgroundColor: '#f9f7f2' }}>
         <Header />
         <main>{children}</main>
         <Footer />

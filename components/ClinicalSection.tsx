@@ -14,10 +14,11 @@ export default function ClinicalSection({
   if (features.length === 0) return null
 
   return (
-    <section className="py-20 bg-white" id="clinical">
+    // Changed: White background to alternate with privacy section's cream
+    <section className="py-24 bg-white" id="clinical">
       <div className="container-padded">
         <SectionHeading heading={heading} intro={intro} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {features.map((feature) => (
             <FeatureCard key={feature.id} item={feature} />
           ))}

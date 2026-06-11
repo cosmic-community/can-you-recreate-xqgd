@@ -6,36 +6,41 @@ export default function Hero({ page }: { page: LandingPage }) {
   const screenshot = m.app_screenshot
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
-      <div className="container-padded py-20 lg:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    // Changed: Cream background matching clinician.therapyally.ai hero section
+    <section className="relative overflow-hidden" style={{ backgroundColor: '#f9f7f2' }}>
+      <div className="container-padded py-24 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <div>
+            {/* Changed: Updated eyebrow badge style to pill shape with tight tracking */}
             {getMetafieldValue(m.hero_eyebrow) && (
-              <span className="inline-block text-sm font-semibold tracking-wide uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full mb-5">
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-brand-600 bg-brand-100 px-4 py-1.5 rounded-full mb-6">
                 {getMetafieldValue(m.hero_eyebrow)}
               </span>
             )}
-            <h1 className="text-4xl md:text-5xl font-extrabold text-ink leading-tight">
+            {/* Changed: Very bold, tight headline matching site's h1 style */}
+            <h1 className="text-5xl md:text-6xl font-black text-ink leading-none tracking-tight">
               {getMetafieldValue(m.hero_headline)}
             </h1>
             {getMetafieldValue(m.hero_subheadline) && (
-              <p className="mt-4 text-xl text-brand-700 font-medium">
+              // Changed: Subheadline uses muted ink with slightly larger leading
+              <p className="mt-5 text-lg md:text-xl text-ink-light leading-relaxed max-w-lg">
                 {getMetafieldValue(m.hero_subheadline)}
               </p>
             )}
             {getMetafieldValue(m.hero_description) && (
-              <p className="mt-5 text-lg text-ink-light leading-relaxed max-w-xl">
+              <p className="mt-4 text-base text-ink-muted leading-relaxed max-w-lg">
                 {getMetafieldValue(m.hero_description)}
               </p>
             )}
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            {/* Changed: Pill-shaped CTA buttons matching site */}
+            <div className="mt-10 flex flex-wrap gap-4">
               {getMetafieldValue(m.primary_cta_label) && (
                 <a
                   href={getMetafieldValue(m.primary_cta_url) || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-sm hover:shadow-md text-sm"
                 >
                   {getMetafieldValue(m.primary_cta_label)}
                 </a>
@@ -43,21 +48,23 @@ export default function Hero({ page }: { page: LandingPage }) {
               {getMetafieldValue(m.secondary_cta_label) && (
                 <a
                   href={getMetafieldValue(m.secondary_cta_url) || '#'}
-                  className="border border-brand-300 hover:border-brand-500 text-brand-700 font-semibold px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center border-2 border-brand-300 hover:border-brand-600 text-brand-700 hover:text-brand-800 font-semibold px-8 py-4 rounded-full transition-all duration-200 text-sm"
                 >
                   {getMetafieldValue(m.secondary_cta_label)}
                 </a>
               )}
             </div>
 
+            {/* Changed: Compliance note styling */}
             {getMetafieldValue(m.compliance_note) && (
-              <p className="mt-6 text-sm text-ink-light flex items-center gap-2">
+              <p className="mt-7 text-xs text-ink-muted flex items-center gap-2 tracking-wide">
                 <span>🔒</span>
                 {getMetafieldValue(m.compliance_note)}
               </p>
             )}
           </div>
 
+          {/* Changed: Screenshot panel with richer shadow and border matching site */}
           <div className="relative">
             {screenshot?.imgix_url ? (
               <img
@@ -65,32 +72,33 @@ export default function Hero({ page }: { page: LandingPage }) {
                 alt="Therapy Ally dashboard preview"
                 width={600}
                 height={450}
-                className="rounded-2xl shadow-2xl border border-gray-100 w-full h-auto"
+                className="rounded-3xl shadow-2xl border border-cream-200 w-full h-auto"
               />
             ) : (
-              <div className="rounded-2xl shadow-2xl border border-gray-100 bg-white p-8">
+              // Changed: Mock dashboard card matching site's card style
+              <div className="rounded-3xl shadow-2xl border border-cream-200 bg-white p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <p className="text-3xl font-bold text-brand-700">12</p>
-                    <p className="text-xs text-ink-light uppercase">Clients</p>
+                  <div className="text-center">
+                    <p className="text-3xl font-black text-brand-700 tracking-tight">12</p>
+                    <p className="text-xs font-medium text-ink-muted uppercase tracking-widest mt-1">Clients</p>
                   </div>
-                  <div>
-                    <p className="text-3xl font-bold text-brand-700">8</p>
-                    <p className="text-xs text-ink-light uppercase">Active</p>
+                  <div className="text-center">
+                    <p className="text-3xl font-black text-brand-700 tracking-tight">8</p>
+                    <p className="text-xs font-medium text-ink-muted uppercase tracking-widest mt-1">Active</p>
                   </div>
-                  <div>
-                    <p className="text-3xl font-bold text-accent-500">3</p>
-                    <p className="text-xs text-ink-light uppercase">Reviews</p>
+                  <div className="text-center">
+                    <p className="text-3xl font-black text-accent-500 tracking-tight">3</p>
+                    <p className="text-xs font-medium text-ink-muted uppercase tracking-widest mt-1">Reviews</p>
                   </div>
                 </div>
-                <div className="bg-brand-50 rounded-xl p-4">
-                  <p className="text-sm font-semibold text-ink mb-2">AI Session Summary</p>
-                  <ul className="text-sm text-ink-light space-y-1">
+                <div className="bg-cream-100 rounded-2xl p-5">
+                  <p className="text-sm font-semibold text-ink mb-3 tracking-tight">AI Session Summary</p>
+                  <ul className="text-sm text-ink-light space-y-1.5">
                     <li>• Discussed work-related anxiety</li>
                     <li>• Practiced breathing exercises</li>
                     <li>• Set goals for next week</li>
                   </ul>
-                  <p className="mt-3 text-xs font-medium text-brand-600">Mood: Improving</p>
+                  <p className="mt-4 text-xs font-semibold text-brand-600 uppercase tracking-widest">Mood: Improving ↑</p>
                 </div>
               </div>
             )}

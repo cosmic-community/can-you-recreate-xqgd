@@ -1,17 +1,29 @@
+// Changed: Updated SectionHeading to match clinician.therapyally.ai heading style
+
+interface SectionHeadingProps {
+  heading: string
+  intro?: string
+  centered?: boolean
+}
+
 export default function SectionHeading({
   heading,
   intro,
-  center = true,
-}: {
-  heading: string
-  intro?: string
-  center?: boolean
-}) {
+  centered = false,
+}: SectionHeadingProps) {
+  const alignment = centered ? 'text-center' : 'text-left'
+
   return (
-    <div className={`max-w-3xl ${center ? 'mx-auto text-center' : ''} mb-12`}>
-      <h2 className="text-3xl md:text-4xl font-bold text-ink">{heading}</h2>
+    <div className={`max-w-2xl ${centered ? 'mx-auto' : ''} ${alignment}`}>
+      {/* Changed: Black-weight heading with tight letter spacing matching site */}
+      <h2 className="text-3xl md:text-4xl font-black text-ink tracking-tight leading-none">
+        {heading}
+      </h2>
       {intro && (
-        <p className="mt-4 text-lg text-ink-light leading-relaxed">{intro}</p>
+        // Changed: Intro paragraph with muted ink and comfortable leading
+        <p className="mt-4 text-base text-ink-light leading-relaxed">
+          {intro}
+        </p>
       )}
     </div>
   )

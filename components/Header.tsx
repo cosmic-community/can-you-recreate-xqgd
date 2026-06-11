@@ -14,39 +14,43 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
-      <div className="container-padded flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2">
+    // Changed: White header with subtle border matching site's clean nav bar
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-cream-200" style={{ borderColor: '#ebe4d5' }}>
+      <div className="container-padded flex items-center justify-between h-[68px]">
+        <Link href="/" className="flex items-center gap-2.5">
           <span className="text-2xl">🧠</span>
-          <span className="font-bold text-lg text-brand-700">Therapy Ally</span>
+          {/* Changed: Brand name in dark navy matching site logo style */}
+          <span className="font-black text-lg tracking-tight text-navy-900">Therapy Ally</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7">
+        {/* Changed: Nav links with tighter tracking and muted default color */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-light hover:text-brand-600 transition-colors"
+              className="text-sm font-medium text-ink-light hover:text-brand-600 transition-colors tracking-wide"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-4">
           <a
             href="https://clinician.therapyally.ai/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-ink-light hover:text-brand-600"
+            className="text-sm font-medium text-ink-light hover:text-brand-600 transition-colors"
           >
             Sign In
           </a>
+          {/* Changed: Pill-style CTA button matching site */}
           <a
             href="https://clinician.therapyally.ai/clinician-signup"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg transition-colors"
+            className="text-sm font-semibold bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm"
           >
             Get Started
           </a>
@@ -68,14 +72,14 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
-          <div className="container-padded py-4 flex flex-col gap-3">
+        <div className="md:hidden border-t bg-white" style={{ borderColor: '#ebe4d5' }}>
+          <div className="container-padded py-5 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-ink-light hover:text-brand-600 py-1"
+                className="text-sm font-medium text-ink-light hover:text-brand-600 py-1 tracking-wide"
               >
                 {link.label}
               </Link>
@@ -84,7 +88,7 @@ export default function Header() {
               href="https://clinician.therapyally.ai/clinician-signup"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold bg-brand-600 text-white px-4 py-2 rounded-lg text-center"
+              className="text-sm font-semibold bg-brand-600 text-white px-5 py-3 rounded-full text-center mt-2"
             >
               Get Started
             </a>

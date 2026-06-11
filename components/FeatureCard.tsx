@@ -7,9 +7,15 @@ export default function FeatureCard({ item }: { item: OrderedItem }) {
   const description = getMetafieldValue(item.metadata?.description)
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow">
-      {emoji && <div className="text-3xl mb-4">{emoji}</div>}
-      <h3 className="text-lg font-semibold text-ink mb-2">{title}</h3>
+    // Changed: White cards with subtle border and stronger hover shadow matching site
+    <div className="bg-white rounded-2xl border p-7 shadow-sm hover:shadow-lg transition-all duration-200" style={{ borderColor: '#ebe4d5' }}>
+      {/* Changed: Emoji icon with light cream circle background */}
+      {emoji && (
+        <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5 text-2xl" style={{ backgroundColor: '#f0eeea' }}>
+          {emoji}
+        </div>
+      )}
+      <h3 className="text-base font-bold text-ink mb-2 tracking-tight">{title}</h3>
       {description && (
         <p className="text-ink-light text-sm leading-relaxed">{description}</p>
       )}

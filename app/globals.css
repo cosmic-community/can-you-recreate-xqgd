@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Changed: Updated CSS variables to match clinician.therapyally.ai palette */
 :root {
-  --background: #ffffff;
-  --foreground: #1a2b33;
+  --background: #f9f7f2;
+  --foreground: #0c1d22;
+  --brand-primary: #1d6e68;
+  --brand-dark: #0d3330;
+  --cream: #f9f7f2;
 }
 
 html {
@@ -15,10 +19,36 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Changed: Updated letter-spacing for headlines to match site's tight tracking */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
 }
 
 @layer components {
   .container-padded {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Changed: Pill-style badge matching site's eyebrow labels */
+  .eyebrow-badge {
+    @apply inline-block text-xs font-semibold tracking-widest uppercase text-brand-600 bg-brand-100 px-4 py-1.5 rounded-pill mb-5;
+  }
+
+  /* Changed: Primary CTA button matching site's style */
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-pill transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  /* Changed: Ghost/outline CTA button */
+  .btn-ghost {
+    @apply border-2 border-brand-300 hover:border-brand-600 text-brand-700 font-semibold px-7 py-3.5 rounded-pill transition-all duration-200;
+  }
+
+  /* Changed: Feature card style matching site */
+  .feature-card {
+    @apply bg-white rounded-2xl border border-gray-100 p-7 shadow-sm hover:shadow-lg transition-all duration-200;
   }
 }
